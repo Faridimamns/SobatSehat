@@ -22,15 +22,13 @@
       <div class="row align-items-center justify-content-between d-flex">
         <nav id="nav-menu-container">
           <ul class="nav-menu">
-            <li class="menu-active"><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="opening-hour.html">Opening Hour </a></li>
-            <li class="menu-has-children"><a href="">Blog</a>
+            <li class="menu-active"><a href="partials/landingPage/main.blade.php">Beranda</a></li>
+            <li><a href="services.html">Jadwal</a></li>
+            <li class="menu-has-children"><a href="about.html">Berita</a>
               <ul>
-                <li><a href="blog-home.html">Blog Home</a></li>
-                <li><a href="blog-single.html">Blog Single</a></li>
-                <li class="menu-has-children"><a href="">Level 2</a>
+                <li><a href="blog-home.html">Diabetes</a></li>
+                <li><a href="blog-single.html">Asam Urat</a></li>
+                <li class="menu-has-children"><a href=""></a>
                   <ul>
                     <li><a href="#">Item One</a></li>
                     <li><a href="#">Item Two</a></li>
