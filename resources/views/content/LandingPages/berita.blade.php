@@ -20,7 +20,8 @@
     <div class="container">
         <div class="row d-flex justify-content-center">
             <div class="col-md-12 pb-40 header-text text-center">
-                <h1 class="pb-10">INFORMASI KESEHATAN</h1>
+                <h1 class="pb-10">Informasi Kesehatan</h1>
+                <p>Informasi Kesehatan terkini dan terpercaya</p>
             </div>
         </div>							
         <div class="row">

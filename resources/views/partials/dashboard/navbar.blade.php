@@ -66,7 +66,7 @@
                                 </a>
                                 <a href="#">
                                     <div class="notif-img">
-                                        <img src="assetsDashboard/img/profile2.jpg" alt="Img Profile">
+                                        <img src="/assetsDashboard/img/profile2.jpg" alt="Img Profile">
                                     </div>
                                     <div class="notif-content">
                                         <span class="block">
@@ -94,12 +94,12 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"
-                        aria-expanded="false"> <img src="assetsDashboard/img/profile.jpg" alt="user-img"
+                        aria-expanded="false"> <img src="/assetsDashboard/img/profile.jpg" alt="user-img"
                             width="36" class="img-circle"><span>Hizrian</span></span> </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li>
                             <div class="user-box">
-                                <div class="u-img"><img src="assetsDashboard/img/profile.jpg"
+                                <div class="u-img"><img src="/assetsDashboard/img/profile.jpg"
                                         alt="user"></div>
                                 <div class="u-text">
                                     <h4>Hizrian</h4>
