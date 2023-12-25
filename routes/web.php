@@ -55,3 +55,12 @@ Route::get('/home/foot', function () {
 Route::get('/klinik', function () {
     return view('content.klinik.index');
 });
+
+Route::get('/berita', function () {
+    return view('content.Berita.index');
+});
+Route::get('/createberita', function () {
+    return view('content.Berita.create');
+});Route::get('/editberita', function () {
+    return view('content.Berita.edit');
+});
