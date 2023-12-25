@@ -32,6 +32,10 @@ Route::get('/main', function () {
     return view('partials.dashboard.main');
 });
 
+Route::get('/klinik', function () {
+    return view('content.Klinik');
+});
+
 Route::get('/home', function () {
     return view('partials.landingPages.main');
 });
