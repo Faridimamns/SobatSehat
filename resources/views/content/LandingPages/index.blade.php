@@ -6,11 +6,15 @@
             <div class="overlay overlay-bg"></div>
             <div class="container">
                 <div class="row fullscreen d-flex justify-content-center align-items-center">
+                    
                     <div class="banner-content col-lg-9 col-md-12 justify-content-center">
-                        <h6 class="text-uppercase mx-10" >SOBAT SEHAT</h6>
-                        <h1>
-                            Nikmati Hari Tua Dengan Hidup Yang Berkualitas		
-                        </h1>
+                        <h4 class="text-uppercase" style="color: white" >SOBAT SEHAT</h4>
+                        <div class="mt-5">
+                            <h1>
+                                Nikmati Hari Tua Dengan Hidup Yang Berkualitas		
+                            </h1>
+                        </div>
+                        
                     </div>											
                 </div>
             </div>
@@ -51,47 +55,41 @@
             <div class="container">
                 <div class="row d-flex justify-content-center">
                     <div class="col-md-12 pb-40 header-text text-center">
-                        <h1 class="pb-10">What we Offer to our Customers</h1>
+                        <h1 class="pb-10">Rekomendasi Klinik</h1>
                         <p>
-                            Who are in extremely love with eco friendly system.
+                            Klinik Rekomendasi & Terpercaya Sesuai Kebutuhan Anda
                         </p>
                     </div>
                 </div>							
                 <div class="row">
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-4 col-md-6">
                         <div class="single-service">
                             <img class="img-fluid" src="/assets/img/s1.jpg" alt="">
-                            <a href="#"><h4>Popular Use Of The Internet</h4></a>
+                            <a href="#"><h4>Klinik BlBLbl</h4></a>
                             <p>
                                 inappropriate behavior is oftenlaug hed off as “boys will be boys,” women face higher conduct women face higher conduct.
                             </p>
+                            <h5>Diabetes</h5>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-4 col-md-6">
                         <div class="single-service">
                             <img class="img-fluid" src="/assets/img/s2.jpg" alt="">
-                            <a href="#"><h4>Protective Preventative</h4></a>
+                            <a href="#"><h4>Klinik BlBLbl</h4></a>
                             <p>
                                 inappropriate behavior is oftenlaug hed off as “boys will be boys,” women face higher conduct women face higher conduct.
                             </p>
+                            <h5>Diabetes</h5>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-4 col-md-6">
                         <div class="single-service">
                             <img class="img-fluid" src="/assets/img/s3.jpg" alt="">
-                            <a href="#"><h4>Download Free Songs</h4></a>
+                            <a href="#"><h4>Klinik BlBLbl</h4></a>
                             <p>
                                 inappropriate behavior is oftenlaug hed off as “boys will be boys,” women face higher conduct women face higher conduct.
                             </p>
-                        </div>
-                    </div>	
-                    <div class="col-lg-3 col-md-6">
-                        <div class="single-service">
-                            <img class="img-fluid" src="/assets/img/s4.jpg" alt="">
-                            <a href="#"><h4>A Discount Toner Cartridge</h4></a>
-                            <p>
-                                inappropriate behavior is oftenlaug hed off as “boys will be boys,” women face higher conduct women face higher conduct.
-                            </p>
+                            <h5>Diabetes</h5>
                         </div>
                     </div>																		
                 </div>
@@ -99,7 +97,7 @@
         </section>
         <!-- End service Area -->
 
-        <!-- Start home-about Area -->
+        {{-- <!-- Start home-about Area -->
         <section class="home-about-area section-gap relative">			
             <div class="container">
                 <div class="row align-items-center justify-content-end">
@@ -135,9 +133,9 @@
                 </div>
             </div>	
         </section>
-        <!-- End home-about Area -->
+        <!-- End home-about Area --> --}}
 
-        <!-- Start testomial Area -->
+        {{-- <!-- Start testomial Area -->
         <section class="testomial-area section-gap">
             <div class="container">
                 <div class="row d-flex justify-content-center">
@@ -244,10 +242,10 @@
                 </div>
             </div>	
         </section>
-        <!-- End testomial Area -->		
+        <!-- End testomial Area -->		 --}}
 
         <!-- Start team Area -->
-        <section class="team-area section-gap" id="team">
+        {{-- <section class="team-area section-gap" id="team">
             <div class="container">
                 <div class="row d-flex justify-content-center">
                     <div class="menu-content pb-70 col-lg-8">
@@ -305,9 +303,9 @@
                 </div>
             </div>
         </section>
-        <!-- End team Area -->		
+        <!-- End team Area -->		 --}}
 
-        <!-- Start feature Area -->
+        {{-- <!-- Start feature Area -->
         <section class="feature-area section-gap">
             <div class="container">
                 <div class="row d-flex justify-content-center">
@@ -520,5 +518,5 @@
                 </div>
             </div>	
         </section>
-        <!-- End blog Area -->		
+        <!-- End blog Area -->		 --}}
 @endsection
