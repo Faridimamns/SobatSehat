@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BeritaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,11 +57,6 @@ Route::get('/klinik', function () {
     return view('content.klinik.index');
 });
 
-Route::get('/berita', function () {
-    return view('content.Berita.index');
-});
-Route::get('/createberita', function () {
-    return view('content.Berita.create');
-});Route::get('/editberita', function () {
-    return view('content.Berita.edit');
-});
+Route::get('/databerita', [BeritaController::class, 'index']);
+Route::get('/databerita/create', [BeritaController::class, 'create']);
+Route::get('/databerita/edit', [BeritaController::class, 'edit']);

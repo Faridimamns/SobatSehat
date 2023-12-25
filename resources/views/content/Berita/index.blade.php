@@ -6,7 +6,7 @@
         <p>Data Berita dan Informasi Terkini mengenai Kesehatan</p>
     </div>
     <div class="card-body">
-        <button type="button" class="btn btn-warning">Tambah</button>
+        <button type="button" class="btn btn-warning mb-3">Tambah</button>
 
         <div class="table-responsive">
             <table class="table table-bordered">
@@ -26,8 +26,10 @@
                         <td></td>
                         <td></td>
                         <td>
-                            <button type="button" class="btn btn-warning">Edit</button>
-                            <button type="button" class="btn btn-danger">Delete</button>
+                            <a href="/berita" style="color: orange; font-size: 20px; font-weight: bold;"><i class="la la-edit la-lg"></i></a>
+                            <a href="/berita" style="color: red; font-size: 20px; font-weight: bold;"><i class="la la-trash la-lg"></i></a>
+                            
+
                         </td>
                     </tr>
                 </tbody>

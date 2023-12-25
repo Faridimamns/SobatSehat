@@ -12,7 +12,9 @@ class BeritaController extends Controller
      */
     public function index()
     {
-        //
+        return view('content.Berita.index', [
+            "title" => "Data Berita"
+        ]);
     }
 
     /**
@@ -20,7 +22,9 @@ class BeritaController extends Controller
      */
     public function create()
     {
-        //
+        return view('content.Berita.create', [
+            "title" => "Tambah Berita"
+        ]);
     }
 
     /**
@@ -44,7 +48,9 @@ class BeritaController extends Controller
      */
     public function edit(Berita $berita)
     {
-        //
+        return view('content.Berita.edit', [
+            "title" => "Edit Berita"
+        ]);
     }
 
     /**
