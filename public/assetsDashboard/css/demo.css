@@ -99,3 +99,17 @@
 .from-show-notify label{
 	padding-top: 0.65rem;
 }
+
+.logo {
+	/* 1702180501320 1 */
+
+position: absolute;
+width: 292px;
+height: 269px;
+left: 852px;
+top: 382px;
+
+background: url(1702180501320.png);
+
+
+}

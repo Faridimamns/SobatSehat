@@ -17,6 +17,11 @@ Route::get('/', function () {
     return view('content.LandingPages.index');
 });
 
+Route::get('/berita', function () {
+    return view('content.LandingPages.berita');
+});
+
+
 Route::get('/navbar', function () {
     return view('partials.dashboard.navbar');
 });
@@ -25,6 +30,10 @@ Route::get('/side', function () {
 });
 Route::get('/main', function () {
     return view('partials.dashboard.main');
+});
+
+Route::get('/klinik', function () {
+    return view('content.Klinik');
 });
 
 Route::get('/home', function () {
