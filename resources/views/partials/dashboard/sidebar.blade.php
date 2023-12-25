@@ -66,7 +66,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="notifications.html">
-                            <i class="la la-bell"></i>
+                            <i class="la la-user"></i>
                             <p>Notifications</p>
                             <span class="badge badge-success">3</span>
                         </a>
@@ -84,12 +84,7 @@
                             <p>Icons</p>
                         </a>
                     </li>
-                    <li class="nav-item update-pro">
-                        <button data-toggle="modal" data-target="#modalUpdate">
-                            <i class="la la-hand-pointer-o"></i>
-                            <p>Update To Pro</p>
-                        </button>
-                    </li>
+
                 </ul>
             </div>
         </div>
