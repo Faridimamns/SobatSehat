@@ -21,6 +21,10 @@ Route::get('/berita', function () {
     return view('content.LandingPages.berita');
 });
 
+Route::get('/jadwal', function () {
+    return view('content.LandingPages.jadwal');
+});
+
 
 Route::get('/navbar', function () {
     return view('partials.dashboard.navbar');
