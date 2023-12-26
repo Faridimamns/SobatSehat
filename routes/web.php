@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\KlinikController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -47,6 +48,9 @@ Route::get('/home/foot', function () {
 });
 
 
+Route::get('/klinik', [KlinikController::class, 'index']);
+Route::get('/klinikcreate', [KlinikController::class, 'create']);
+Route::get('/klinikedit', [KlinikController::class, 'edit']);
 
 // Route::get('/klinik', function () {
 //     return view('content.klinik.index');
