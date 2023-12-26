@@ -22,14 +22,14 @@ Route::get('/', function () {
     return view('content.LandingPages.index');
 });
 
-Route::get('/JadwalAdmin', [JadwalController::class, 'index']);
-Route::get('/JadwalAdmin/create', [JadwalController::class, 'create']);
-Route::get('/JadwalAdmin/edit', [JadwalController::class, 'edit']);
+Route::get('/jadwal', [JadwalController::class, 'index']);
+Route::get('/jadwal/create', [JadwalController::class, 'create']);
+Route::get('/jadwal/edit', [JadwalController::class, 'edit']);
 
-Route::get('/databerita', [BeritaController::class, 'index']);
-Route::get('/databerita/create', [BeritaController::class, 'create']);
-Route::get('/databerita/edit', [BeritaController::class, 'edit']);
+Route::get('/berita', [BeritaController::class, 'index']);
+Route::get('/berita/create', [BeritaController::class, 'create']);
+Route::get('/berita/edit', [BeritaController::class, 'edit']);
 
 Route::get('/klinik', [KlinikController::class, 'index']);
-Route::get('/klinikcreate', [KlinikController::class, 'create']);
-Route::get('/klinikedit', [KlinikController::class, 'edit']);
+Route::get('/klinik/create', [KlinikController::class, 'create']);
+Route::get('/klinik/edit', [KlinikController::class, 'edit']);
