@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\KlinikController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BeritaController;
 
@@ -37,9 +38,9 @@ Route::get('/main', function () {
     return view('partials.dashboard.main');
 });
 
-Route::get('/klinik', function () {
-    return view('content.Klinik');
-});
+// Route::get('/klinik', function () {
+//     return view('content.Klinik');
+// });
 
 Route::get('/home', function () {
     return view('partials.landingPages.main');
@@ -56,7 +57,3 @@ Route::get('/home/foot', function () {
 Route::get('/klinik', function () {
     return view('content.klinik.index');
 });
-
-Route::get('/databerita', [BeritaController::class, 'index']);
-Route::get('/databerita/create', [BeritaController::class, 'create']);
-Route::get('/databerita/edit', [BeritaController::class, 'edit']);

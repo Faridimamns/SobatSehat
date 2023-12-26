@@ -64,6 +64,7 @@
 
             </div>
         </div>
+
     </div>
     <div class="container main-menu" style="background: linear-gradient(to right, #ea9292, #ff4848); border-radius:0.5rem">
         <div class="row align-items-center justify-content-between d-flex">
@@ -85,4 +86,5 @@
             </div>
         </div>
     </div>
+
 </header><!-- #header -->

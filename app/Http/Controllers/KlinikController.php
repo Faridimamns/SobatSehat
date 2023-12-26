@@ -12,7 +12,10 @@ class KlinikController extends Controller
      */
     public function index()
     {
-        //
+        // menampilkan halaman utama dashboard klinik
+        return view('content.Klinik.index', [
+            "title" => "Data Klinik"
+        ]);
     }
 
     /**
@@ -20,7 +23,10 @@ class KlinikController extends Controller
      */
     public function create()
     {
-        //
+        // menampilkan form tambah data klinik
+        return view('content.Klinik.create', [
+            "title" => "Tambah Klinik"
+        ]);
     }
 
     /**
@@ -44,7 +50,11 @@ class KlinikController extends Controller
      */
     public function edit(Klinik $klinik)
     {
-        //
+    
+        // menampilkan form edit data klinik
+        return view('content.Klinik.edit', [
+            "title" => "Edit Data Klinik"
+        ]);
     }
 
     /**
