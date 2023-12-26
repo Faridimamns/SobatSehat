@@ -15,7 +15,7 @@
             background-color: #FFD371;
             color: black;
             text-decoration: none;
-            border-radius: 5px;"">
+            border-radius: 5px;">
                 <span>Tambah</span>
                 <i class="fas fa-edit"></i>
             </a>
