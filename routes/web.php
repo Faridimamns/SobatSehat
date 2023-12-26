@@ -30,3 +30,6 @@ Route::get('/databerita', [BeritaController::class, 'index']);
 Route::get('/databerita/create', [BeritaController::class, 'create']);
 Route::get('/databerita/edit', [BeritaController::class, 'edit']);
 
+Route::get('/klinik', [KlinikController::class, 'index']);
+Route::get('/klinikcreate', [KlinikController::class, 'create']);
+Route::get('/klinikedit', [KlinikController::class, 'edit']);
