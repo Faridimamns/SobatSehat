@@ -26,3 +26,7 @@ Route::get('/JadwalAdmin', [JadwalController::class, 'index']);
 Route::get('/JadwalAdmin/create', [JadwalController::class, 'create']);
 Route::get('/JadwalAdmin/edit', [JadwalController::class, 'edit']);
 
+Route::get('/databerita', [BeritaController::class, 'index']);
+Route::get('/databerita/create', [BeritaController::class, 'create']);
+Route::get('/databerita/edit', [BeritaController::class, 'edit']);
+
