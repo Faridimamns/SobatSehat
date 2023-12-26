@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\JadwalController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -51,3 +53,14 @@ Route::get('/home/foot', function () {
 Route::get('/klinik', function () {
     return view('content.klinik.index');
 });
+
+// Route::get('/JadwalAdmin', function () {
+//     return view('content.JadwalAdmin.index');
+// });
+// Route::get('/createJadwal', function () {
+//     return view('content.JadwalAdmin.create');
+// });
+
+Route::get('/JadwalAdmin', [JadwalController::class, 'index']);
+Route::get('/JadwalAdmin/create', [JadwalController::class, 'create']);
+Route::get('/JadwalAdmin/edit', [JadwalController::class, 'edit']);
