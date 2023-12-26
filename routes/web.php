@@ -3,6 +3,9 @@
 use App\Http\Controllers\KlinikController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\JadwalController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +21,8 @@ use App\Http\Controllers\BeritaController;
 Route::get('/', function () {
     return view('content.LandingPages.index');
 });
+
+Route::get('/JadwalAdmin', [JadwalController::class, 'index']);
+Route::get('/JadwalAdmin/create', [JadwalController::class, 'create']);
+Route::get('/JadwalAdmin/edit', [JadwalController::class, 'edit']);
+
