@@ -2,6 +2,10 @@
 
 use App\Http\Controllers\KlinikController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\JadwalController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,5 +19,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+Route::get('/', function () {
+    return view('content.LandingPages.index');
+});
 
+Route::get('/jadwal', [JadwalController::class, 'index']);
+Route::get('/jadwal/create', [JadwalController::class, 'create']);
+Route::get('/jadwal/edit', [JadwalController::class, 'edit']);
+
+Route::get('/berita', [BeritaController::class, 'index']);
+Route::get('/berita/create', [BeritaController::class, 'create']);
+Route::get('/berita/edit', [BeritaController::class, 'edit']);
+
+Route::get('/klinik', [KlinikController::class, 'index']);
+Route::get('/klinik/create', [KlinikController::class, 'create']);
+Route::get('/klinik/edit', [KlinikController::class, 'edit']);
 
