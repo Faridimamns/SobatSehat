@@ -32,9 +32,9 @@ Route::get('/main', function () {
     return view('partials.dashboard.main');
 });
 
-Route::get('/klinik', function () {
-    return view('content.Klinik');
-});
+// Route::get('/klinik', function () {
+//     return view('content.Klinik');
+// });
 
 Route::get('/home', function () {
     return view('partials.landingPages.main');
@@ -48,6 +48,12 @@ Route::get('/home/foot', function () {
 
 
 
-Route::get('/klinik', function () {
-    return view('content.klinik.index');
-});
+// Route::get('/klinik', function () {
+//     return view('content.klinik.index');
+// });
+// Route::get('/klinikedit', function () {
+//     return view('content.klinik.edit');
+// });
+// Route::get('/kliniktambah', function () {
+//     return view('content.klinik.tambah');
+// });
