@@ -42,16 +42,6 @@ Route::get('/main', function () {
 //     return view('content.Klinik');
 // });
 
-Route::get('/home', function () {
-    return view('partials.landingPages.main');
-});
-Route::get('/home/nav', function () {
-    return view('partials.landingPages.navbar');
-});
-Route::get('/home/foot', function () {
-    return view('partials.landingPages.footer');
-});
-
 
 
 Route::get('/klinik', function () {
