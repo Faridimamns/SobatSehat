@@ -48,10 +48,6 @@
 
                 </div> --}}
 
-
-
-
-
                 {{-- <div class="dropdown">
                         <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
@@ -70,10 +66,10 @@
         <div class="row align-items-center justify-content-between d-flex">
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
-                    <li><a href="#">Beranda</a></li>
+                    <li><a href="{{ url('/')}}">Beranda</a></li>
                     {{-- <li><a href="opening-hour.html">Berita</a></li> --}}
-                    <li><a href="#">Berita</a></li>
-                    <li><a href="#">Jadwal</a></li>
+                    <li><a href="{{ url('/home/berita')}}">Berita</a></li>
+                    <li><a href="{{ url('/home/jadwal')}}">Jadwal</a></li>
                     {{-- <li><a href="pricing.html">Pricing</a></li>
                     <li><a href="elements.html">Elements</a></li>
                     <li><a href="contact.html">Contact</a></li> --}}

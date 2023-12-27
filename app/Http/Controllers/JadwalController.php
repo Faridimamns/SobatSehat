@@ -12,7 +12,7 @@ class JadwalController extends Controller
      */
     public function index()
     {
-        return view("content.JadwalAdmin.index", [
+        return view("content.Jadwal.index", [
             "title" => "Data Jawal"
         ]);
     }
@@ -22,7 +22,7 @@ class JadwalController extends Controller
      */
     public function create()
     {
-        return view("content.JadwalAdmin.create", [
+        return view("content.Jadwal.create", [
             "title" => "Buat Jadwal"
         ]);
     }
@@ -48,7 +48,7 @@ class JadwalController extends Controller
      */
     public function edit(Jadwal $jadwal)
     {
-        return view("content.JadwalAdmin.edit", [
+        return view("content.Jadwal.edit", [
             "title" => "Edit Jadwal"
         ]);
     }

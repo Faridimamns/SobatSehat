@@ -3,6 +3,7 @@
 use App\Http\Controllers\KlinikController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JadwalController;
 
 
@@ -22,6 +23,10 @@ use App\Http\Controllers\JadwalController;
 Route::get('/', function () {
     return view('content.LandingPages.index');
 });
+
+Route::get('/', [HomeController::class, 'klinik']);
+Route::get('/home/berita', [HomeController::class, 'berita']);
+Route::get('/home/jadwal', [HomeController::class, 'jadwal']);
 
 Route::get('/jadwal', [JadwalController::class, 'index']);
 Route::get('/jadwal/create', [JadwalController::class, 'create']);
