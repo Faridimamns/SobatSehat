@@ -12,8 +12,10 @@ class BeritaController extends Controller
      */
     public function index()
     {
+        $beritas = Berita::all();
         return view('content.Berita.index', [
-            "title" => "Data Berita"
+            "title" => "Data Berita",
+            'beritas' => $beritas
         ]);
     }
 

@@ -3,8 +3,18 @@
 <div class="card">
     <div class="card-header">
         <div class="card-title">Tambah Data Berita</div>
+        @if (count($errors) > 0)
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
         <p>Penambahan Data Berita dan Informasi</p>
     </div>
+    <form action="">
     <div class="card-body">
         <div class="form-group">
             <label for="text">Judul</label>
@@ -26,5 +36,7 @@
             <a href="/berita" type="button" class="btn btn-danger">Cancel</a>
             <button type="button" class="btn btn-info">Submit</button>
         </div>
+    </div>
+    </form>
 </div>
 @endsection

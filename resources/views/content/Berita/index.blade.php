@@ -19,21 +19,26 @@
                         <th>Judul</th>
                         <th>Informasi</th>
                         <th>Link</th>
+                        <th>Gambar</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($beritas as $berita)
                     <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <th scope="row">{{ $berita->id }}</th>
+                        <td>{{ $berita->judul }}</td>
+                        <td>{{ $berita->informasi }}</td>
+                        <td>{{ $berita->link }}</td>
+                        <td>{{ $berita->gambar }}</td>
+                        
                         <td>
                             <a href="berita/edit" style="color: orange; font-size: 20px; font-weight: bold;"><i class="la la-edit la-lg"></i></a>
                             <a href="/berita" style="color: red; font-size: 20px; font-weight: bold;"><i class="la la-trash la-lg"></i></a>
                             
 
                         </td>
+                    @endforeach
                     </tr>
                 </tbody>
             </table>
