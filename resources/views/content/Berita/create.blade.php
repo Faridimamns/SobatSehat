@@ -19,7 +19,7 @@
             <input type="link" class="form-control" id="link" placeholder="Masukkan Link">
         </div>
         <div class="mt-2 mb-2 p-2">
-            <button type="button" class="btn btn-danger">Cancel</button>
+            <a href="/berita" type="button" class="btn btn-danger">Cancel</a>
             <button type="button" class="btn btn-info">Submit</button>
         </div>
 </div>
