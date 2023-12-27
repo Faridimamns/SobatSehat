@@ -35,6 +35,17 @@ class BeritaController extends Controller
     public function store(Request $request)
     {
         //
+        $validated = $request->validate([
+            'judul' => 'required',
+            'informasi' => 'required',
+            'link' => 'required',
+            'gambar' => 'required',
+        ]);
+
+        unset($validated['id']);
+
+        Berita::create($validated);
+        return redirect('/dashboard/berita');
     }
 
     /**

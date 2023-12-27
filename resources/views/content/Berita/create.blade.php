@@ -14,7 +14,8 @@
     @endif
         <p>Penambahan Data Berita dan Informasi</p>
     </div>
-    <form action="">
+    <form class="forms-sample" action="{{ url('/dashboard/berita/store') }}" method="POST">
+    @csrf
     <div class="card-body">
         <div class="form-group">
             <label for="text">Judul</label>
