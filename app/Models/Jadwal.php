@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Jadwal extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'lokasi',
+        'alamat',
+        'link',
+        'tanggal',
+        'gambar',
+    ];
 }
