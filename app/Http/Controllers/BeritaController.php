@@ -45,7 +45,7 @@ class BeritaController extends Controller
         unset($validated['id']);
 
         Berita::create($validated);
-        return redirect('/dashboard/berita');
+        return redirect('/berita');
     }
 
     /**
@@ -59,26 +59,36 @@ class BeritaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Berita $berita)
+    public function edit(string $id)
     {
+        $berita = Berita::find($id);
         return view('content.Berita.edit', [
-            "title" => "Edit Berita"
+            "title" => "Edit Berita",
+            'berita' => $berita
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Berita $berita)
+    public function update(Request $request, string $id)
     {
-        //
+        $berita = Berita::find($id);
+        $validated = $request->validate([
+            'judul' => 'required',
+            'informasi' => 'required',
+            'link' => 'required',
+        ]);
+        $berita->update($validated);
+        return redirect('/berita');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Berita $berita)
+    public function destroy(string $id)
     {
-        //
+        Berita::destroy($id);
+        return redirect('/berita');
     }
 }
