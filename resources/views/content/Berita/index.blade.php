@@ -6,7 +6,8 @@
         <p>Data Berita dan Informasi Terkini mengenai Kesehatan</p>
     </div>
     <div class="card-body">
-        <button type="button" class="btn btn-warning mb-3">Tambah</button>
+        <a href="{{ url('berita/create')}}" type="button" class="btn btn-warning mb-3">Tambah</a>
+        {{-- <a href="{{ url('berita.create')}}" type="button">asldknalsdn</a> --}}
 
         <div class="table-responsive">
             <table class="table table-bordered">

@@ -18,6 +18,10 @@
             <label for="text-area">Jenis Penyakit</label>
             <input type="text-area" class="form-control" id="text-area" placeholder="Masukkan Jenis Penyakit">
         </div>
+        <div class="form-group">
+            <label for="text">File Gambar</label>
+            <input type="file" class="form-control" id="gambar" accept=".png, .jpg, .jpeg">
+        </div>
         <div class="mt-2 mb-2 p-2">
             <button type="button" class="btn btn-danger">Cancel</button>
             <button type="button" class="btn btn-info">Submit</button>
