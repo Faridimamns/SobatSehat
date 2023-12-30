@@ -34,7 +34,10 @@ Route::get('/jadwal/edit', [JadwalController::class, 'edit']);
 
 Route::get('/berita', [BeritaController::class, 'index']);
 Route::get('/berita/create', [BeritaController::class, 'create']);
-Route::get('/berita/edit', [BeritaController::class, 'edit']);
+Route::get('/berita/edit/{id}', [BeritaController::class, 'edit']);
+Route::get('/berita/delete/{id}', [BeritaController::class, 'destroy']);
+Route::post('/berita', [BeritaController::class, 'store']);
+Route::put('/berita/{id}', [BeritaController::class, 'update']);
 
 Route::get('/klinik', [KlinikController::class, 'index']);
 Route::get('/klinik/create', [KlinikController::class, 'create']);
