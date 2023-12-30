@@ -6,25 +6,24 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function klinik()
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
     {
-        return view("content.LandingPages.index", [
-            "title" => "Sobat Sehat"
-        ]);
+        $this->middleware('auth');
     }
 
-    public function berita()
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function index()
     {
-        return view("content.LandingPages.berita", [
-            "title" => "Sobat Sehat"
-        ]);
+        // return view('home');
+        return redirect('/');
     }
-
-    public function jadwal()
-    {
-        return view("content.LandingPages.jadwal", [
-            "title" => "Sobat Sehat"
-        ]);
-    }
-
 }

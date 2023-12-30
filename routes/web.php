@@ -4,9 +4,9 @@ use App\Http\Controllers\KlinikController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\JadwalController;
-
-
+use App\Http\Controllers\LandingPageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,13 +19,13 @@ use App\Http\Controllers\JadwalController;
 |
 */
 
-Route::get('/', function () {
-    return view('content.LandingPages.index');
+Route::get('/successregister', function () {
+    return view('auth.success');
 });
 
-Route::get('/', [HomeController::class, 'klinik']);
-Route::get('/home/berita', [HomeController::class, 'berita']);
-Route::get('/home/jadwal', [HomeController::class, 'jadwal']);
+Route::get('/', [LandingPageController::class, 'klinik']);
+Route::get('/page/berita', [LandingPageController::class, 'berita']);
+Route::get('/page/jadwal', [LandingPageController::class, 'jadwal']);
 
 Route::get('/jadwal', [JadwalController::class, 'index']);
 Route::get('/jadwal/create', [JadwalController::class, 'create']);
@@ -38,3 +38,8 @@ Route::get('/berita/edit', [BeritaController::class, 'edit']);
 Route::get('/klinik', [KlinikController::class, 'index']);
 Route::get('/klinik/create', [KlinikController::class, 'create']);
 Route::get('/klinik/edit', [KlinikController::class, 'edit']);
+
+
+Auth::routes();
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');

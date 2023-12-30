@@ -13,7 +13,7 @@ class BeritaController extends Controller
     public function index()
     {
         return view('content.Berita.index', [
-            "title" => "Data Berita"
+            "title" => "Data Berita",
         ]);
     }
 
