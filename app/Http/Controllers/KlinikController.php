@@ -42,20 +42,18 @@ class KlinikController extends Controller
     {
         //menambahkan data klinik
         $validated = $request->validate([
-            "title" => "required|max:255",
             'nama' => 'required',
             'alamat' => 'required',
             'penyakit' => 'required',
-            'gambar' => 'required'
+            'gambar' => 'required',
         ]);
-
-
+    
         unset($validated['id']);
-        
-        Klinik::create('validated');
+    
+        Klinik::create($validated);
         return redirect('/klinik');
     }
-
+    
     /**
      * Display the specified resource.
      */
@@ -85,15 +83,16 @@ class KlinikController extends Controller
     public function update(Request $request, string $id)
     {
         //
-        Klinik::find($id);
+        $klinik = Klinik::find($id);
         $validated = $request->validate([
-            "title" => "required|max:255",
+
             'nama' => 'required',
             'alamat' => 'required',
             'penyakit' => 'required',
             'gambar' => 'required'
         ]);
-
+        $klinik->update($validated);
+        return redirect('/klinik');
 
     }
 
