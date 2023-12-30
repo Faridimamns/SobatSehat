@@ -25,17 +25,19 @@
             </div>
         </div>							
         <div class="row">
+            @foreach ($beritas as $berita)
             <div class="col-lg-4 col-md-6">
                 <div class="single-service">
                     <img class="img-fluid" src="/assets/img/s1.jpg" alt="">
-                    <a href="#"><h4>Makanan sehat untuk lansia</h4></a>
+                    <a href="#"><h4>{{ $berita->judul }}</h4></a>
                     <p>
-                        Panduan Mengatur Menu Makanan untuk Lansia, Lengkap dengan Porsinya. 
+                        {{ $berita->informasi }} 
                     </p>
-                    <button type="button" class="btn btn-info">Selengkapnya</button>
+                    <a href="{{ $berita->link }}" type="button" class="btn btn-info" >Selengkapnya</a>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6">
+            @endforeach
+            {{-- <div class="col-lg-4 col-md-6">
                 <div class="single-service">
                     <img class="img-fluid" src="/assets/img/s2.jpg" alt="">
                     <a href="#"><h4>Olahraga yang cukup untuk lansia</h4></a>
@@ -54,7 +56,7 @@
                     </p>
                     <button type="button" class="btn btn-info">Selengkapnya</button>
                 </div>
-            </div>																		
+            </div>																		 --}}
         </div>
     </div>	
 </section>

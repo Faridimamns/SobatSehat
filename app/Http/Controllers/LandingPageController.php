@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Berita;
+
 use Illuminate\Http\Request;
 
 class LandingPageController extends Controller
@@ -15,8 +17,10 @@ class LandingPageController extends Controller
 
     public function berita()
     {
+        $beritas = Berita::all();
         return view("content.LandingPages.berita", [
-            "title" => "Sobat Sehat"
+            "title" => "Sobat Sehat",
+            'beritas' => $beritas
         ]);
     }
 
