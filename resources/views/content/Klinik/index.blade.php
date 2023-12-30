@@ -15,19 +15,25 @@
                         <th>Nama Klinik</th>
                         <th>Alamat Klinik</th>
                         <th>Jenis Penyakit</th>
+                        <th>Gambar</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
-                        <th scope="row">5</th>
-                        <td>Klinik Kinan</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>
-                            <a href="/klinik" style="color: orange; font-size: 20px; font-weight: bold;"><i class="la la-edit la-lg"></i></a>
-                            <a href="/klinik" style="color: red; font-size: 20px; font-weight: bold;"><i class="la la-trash la-lg"></i></a>
-                        </td>
-                    </tr>
+                    @foreach ($kliniks as $klinik)
+                         <tr>
+                            <th scope="row">{{ $klinik->id }}</th>
+                            <td>{{ $klinik->nama }}</td>
+                            <td>{{ $klinik->alamat }}</td>
+                            <td>{{ $klinik->penyakit }}</td>
+                            <td>{{ $klinik->gambar }}</td>
+                            <td>
+                                <a href="klinik/edit/{{$klinik->id}}" style="color: orange; font-size: 20px; font-weight: bold;"><i class="la la-edit la-lg"></i></a>
+                                <a href="klinik/delete/{{$klinik->id}}" style="color: red; font-size: 20px; font-weight: bold;"><i class="la la-trash la-lg"></i></a>
+                            </td>
+                        </tr>
+                    @endforeach
+                   
                 </tbody>
             </table>
         </div>

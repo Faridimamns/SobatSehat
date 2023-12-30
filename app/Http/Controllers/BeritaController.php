@@ -78,6 +78,7 @@ class BeritaController extends Controller
             'judul' => 'required',
             'informasi' => 'required',
             'link' => 'required',
+            'gambar' => 'required'
         ]);
         $berita->update($validated);
         return redirect('/berita');
