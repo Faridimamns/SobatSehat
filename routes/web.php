@@ -38,5 +38,9 @@ Route::get('/berita/edit', [BeritaController::class, 'edit']);
 
 Route::get('/klinik', [KlinikController::class, 'index']);
 Route::get('/klinik/create', [KlinikController::class, 'create']);
-Route::get('/klinik/edit', [KlinikController::class, 'edit']);
+Route::get('/klinik/edit/{id}', [KlinikController::class, 'edit']);
+Route::get('/klinik/delete/{id}', [KlinikController::class, 'destroy']);
+Route::post('/klinik', [KlinikController::class, 'store']);
+Route::put('/klinik/{id}',[KlinikController::class,'update' ]);
+
 

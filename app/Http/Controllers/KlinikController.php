@@ -12,9 +12,12 @@ class KlinikController extends Controller
      */
     public function index()
     {
+        
         // menampilkan halaman utama dashboard klinik
+        $kliniks = Klinik::all();
         return view('content.Klinik.index', [
-            "title" => "Data Klinik"
+            "title" => "Data Klinik",
+            "kliniks" => $kliniks
         ]);
     }
 
@@ -27,6 +30,9 @@ class KlinikController extends Controller
         return view('content.Klinik.create', [
             "title" => "Tambah Klinik"
         ]);
+
+        
+
     }
 
     /**
@@ -34,7 +40,20 @@ class KlinikController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //menambahkan data klinik
+        $validated = $request->validate([
+            "title" => "required|max:255",
+            'nama' => 'required',
+            'alamat' => 'required',
+            'penyakit' => 'required',
+            'gambar' => 'required'
+        ]);
+
+
+        unset($validated['id']);
+        
+        Klinik::create('validated');
+        return redirect('/klinik');
     }
 
     /**
@@ -43,33 +62,48 @@ class KlinikController extends Controller
     public function show(Klinik $klinik)
     {
         //
+
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Klinik $klinik)
+    public function edit(String $id)
     {
     
+        $klinik = Klinik::find($id);
         // menampilkan form edit data klinik
         return view('content.Klinik.edit', [
-            "title" => "Edit Data Klinik"
+            "title" => "Edit Data Klinik",
+            'klinik' => $klinik
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Klinik $klinik)
+    public function update(Request $request, string $id)
     {
         //
+        Klinik::find($id);
+        $validated = $request->validate([
+            "title" => "required|max:255",
+            'nama' => 'required',
+            'alamat' => 'required',
+            'penyakit' => 'required',
+            'gambar' => 'required'
+        ]);
+
+
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Klinik $klinik)
+    public function destroy($id)
     {
         //
+        Klinik::destroy($id);
+        return redirect('/klinik');
     }
 }

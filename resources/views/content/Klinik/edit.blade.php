@@ -23,8 +23,8 @@
             <input type="file" class="form-control" id="gambar" accept=".png, .jpg, .jpeg">
         </div>
         <div class="mt-2 mb-2 p-2">
-            <button type="button" class="btn btn-danger">Cancel</button>
-            <button type="button" class="btn btn-info">Submit</button>
+            <a href="{{ url('klinik/') }}" name="cancel" type="button" class="btn btn-danger">Cancel</a>
+            <a href="{{ url('klinik/') }}"><button name="submit" type="submit" class="btn btn-primary">Submit</button></a>
         </div>
 </div>
 @endsection

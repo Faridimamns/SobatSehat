@@ -9,6 +9,7 @@ class Klinik extends Model
 {
     use HasFactory;
     
+    protected $table ='klinik';
     protected $fillable = [
         'nama',
         'alamat',

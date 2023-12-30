@@ -15,6 +15,7 @@
                         <th>Nama Klinik</th>
                         <th>Alamat Klinik</th>
                         <th>Jenis Penyakit</th>
+                        <th>Gambar</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -22,9 +23,10 @@
                     @foreach ($kliniks as $klinik)
                          <tr>
                             <th scope="row">{{ $klinik->id }}</th>
-                            <td>{{ $klinik->nama_klinik }}</td>
-                            <td>{{ $klinik->alamat_klinik }}</td>
-                            <td>{{ $klinik->jenis_penyakit }}</td>
+                            <td>{{ $klinik->nama }}</td>
+                            <td>{{ $klinik->alamat }}</td>
+                            <td>{{ $klinik->penyakit }}</td>
+                            <td>{{ $klinik->gambar }}</td>
                             <td>
                                 <a href="/klinik" style="color: orange; font-size: 20px; font-weight: bold;"><i class="la la-edit la-lg"></i></a>
                                 <a href="/klinik" style="color: red; font-size: 20px; font-weight: bold;"><i class="la la-trash la-lg"></i></a>
