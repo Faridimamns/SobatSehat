@@ -12,8 +12,10 @@ class JadwalController extends Controller
      */
     public function index()
     {
-        return view("content.Jadwal.index", [
-            "title" => "Data Jawal"
+        $jadwals = Jadwal::all();
+        return view('content.Jadwal.index', [
+            "title" => "Data Jadwal",
+            'jadwals' => $jadwals
         ]);
     }
 
@@ -23,7 +25,7 @@ class JadwalController extends Controller
     public function create()
     {
         return view("content.Jadwal.create", [
-            "title" => "Buat Jadwal"
+            "title" => "Tambah Jadwal"
         ]);
     }
 
@@ -33,6 +35,18 @@ class JadwalController extends Controller
     public function store(Request $request)
     {
         //
+        $validated = $request->validate([
+            'lokasi' => 'required',
+            'alamat' => 'required',
+            'link' => 'required',
+            'tanggal' => 'required',
+            'gambar' => 'required',
+        ]);
+
+        unset($validated['id']);
+
+        Jadwal::create($validated);
+        return redirect('/jadwal');
     }
 
     /**
@@ -46,26 +60,37 @@ class JadwalController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Jadwal $jadwal)
+    public function edit(string $id)
     {
-        return view("content.Jadwal.edit", [
-            "title" => "Edit Jadwal"
+        $jadwal = Jadwal::find($id);
+        return view('content.Jadwal.edit', [
+            "title" => "Edit Jadwal",
+            'jadwal' => $jadwal
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Jadwal $jadwal)
+    public function update(Request $request, string $id)
     {
-        //
+        $jadwal = Jadwal::find($id);
+        $validated = $request->validate([
+            'lokasi' => 'required',
+            'alamat' => 'required',
+            'tanggal' => 'required',
+            'link' => 'required',
+        ]);
+        $jadwal->update($validated);
+        return redirect('/jadwal');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Jadwal $jadwal)
+    public function destroy(string $id)
     {
-        //
+        Jadwal::destroy($id);
+        return redirect('/jadwal');
     }
 }

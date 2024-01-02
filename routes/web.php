@@ -29,7 +29,10 @@ Route::get('/page/jadwal', [LandingPageController::class, 'jadwal']);
 
 Route::get('/jadwal', [JadwalController::class, 'index']);
 Route::get('/jadwal/create', [JadwalController::class, 'create']);
-Route::get('/jadwal/edit', [JadwalController::class, 'edit']);
+Route::get('/jadwal/edit/{id}', [JadwalController::class, 'edit']);
+Route::get('/jadwal/delete/{id}', [JadwalController::class, 'destroy']);
+Route::post('/jadwal', [JadwalController::class, 'store']);
+Route::put('/jadwal/{id}', [JadwalController::class, 'update']);
 
 Route::get('/berita', [BeritaController::class, 'index']);
 Route::get('/berita/create', [BeritaController::class, 'create']);
