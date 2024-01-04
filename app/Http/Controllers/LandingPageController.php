@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Berita;
+use App\Models\Jadwal;
+use App\Models\Klinik;
 
 use Illuminate\Http\Request;
 
@@ -10,8 +12,10 @@ class LandingPageController extends Controller
 {
     public function klinik()
     {
+        $kliniks = Klinik::all();
         return view("content.LandingPages.index", [
-            "title" => "Sobat Sehat"
+            "title" => "Sobat Sehat",
+            'kliniks' => $kliniks
         ]);
     }
 
@@ -26,8 +30,10 @@ class LandingPageController extends Controller
 
     public function jadwal()
     {
+        $jadwals = Jadwal::all();
         return view("content.LandingPages.jadwal", [
-            "title" => "Sobat Sehat"
+            "title" => "Sobat Sehat",
+            'jadwals' => $jadwals
         ]);
     }
 

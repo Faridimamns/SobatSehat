@@ -14,7 +14,7 @@
     @endif
         <p>Penambahan Data Berita dan Informasi</p>
     </div>
-    <form class="forms-sample" action="{{ url('/berita') }}" method="POST">
+    <form class="forms-sample" action="{{ url('/berita') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="card-body">
         <div class="form-group">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Klinik;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class KlinikController extends Controller
 {
@@ -48,6 +49,12 @@ class KlinikController extends Controller
             'gambar' => 'required',
         ]);
     
+
+        $gambarPath = $request->file('gambar')->store('gambar', 'public');
+
+        $validated['gambar'] = $gambarPath;
+
+
         unset($validated['id']);
     
         Klinik::create($validated);
@@ -91,6 +98,17 @@ class KlinikController extends Controller
             'penyakit' => 'required',
             'gambar' => 'required'
         ]);
+
+        // Update gambar jika ada
+        if ($request->hasFile('gambar')) {
+            // Hapus gambar lama jika diperlukan
+            Storage::delete($klinik->gambar);
+
+            // Simpan gambar baru
+            $klinik->gambar = $request->file('gambar')->store('gambar', 'public');
+            $klinik->save();
+        }
+
         $klinik->update($validated);
         return redirect('/klinik');
 
@@ -102,6 +120,21 @@ class KlinikController extends Controller
     public function destroy($id)
     {
         //
+        // Klinik::destroy($id);
+        // return redirect('/klinik');
+
+        $klinik = Klinik::find($id);
+
+        if (!$klinik) {
+            return redirect('/klinik')->with('error', 'klinik tidak ditemukan');
+        }
+    
+        // Hapus gambar dari storage
+        Storage::delete($klinik->gambar);
+    
+        // Hapus record dari database
+        $klinik->delete();
+
         Klinik::destroy($id);
         return redirect('/klinik');
     }

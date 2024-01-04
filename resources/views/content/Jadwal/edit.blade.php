@@ -5,7 +5,7 @@
         <div class="card-title">Edit Jadwal Konsultasi</div>
         <p>Data Jadwal konsultasi Terkini mengenai Kesehatan</p>
     </div>
-    <form class="forms-sample" action="{{ url('/jadwal', $jadwal->id)  }}" method="POST">
+    <form class="forms-sample" action="{{ url('/jadwal', $jadwal->id)  }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="card-body">    

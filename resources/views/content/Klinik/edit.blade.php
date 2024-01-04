@@ -5,7 +5,7 @@
             <div class="card-title">Edit Data Klinik</div>
             <p>Edit Data Klinik Rekomendasi</p>
         </div>
-        <form class="forms-sample" action="{{ url('/klinik', $klinik->id) }}" method="POST">
+        <form class="forms-sample" action="{{ url('/klinik', $klinik->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 

@@ -14,7 +14,7 @@
     @endif
         <p>Data Jadwal konsultasi Terkini mengenai Kesehatan</p>
     </div>
-    <form class="forms-sample" action="{{ url('/jadwal') }}" method="POST">
+    <form class="forms-sample" action="{{ url('/jadwal') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="card-body">  
         <div class="form-group">

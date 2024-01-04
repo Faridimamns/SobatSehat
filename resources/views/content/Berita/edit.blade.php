@@ -5,7 +5,7 @@
         <div class="card-title">Edit Data Berita</div>
         <p>Edit Data Berita dan Informasi</p>
     </div>
-    <form class="forms-sample" action="{{ url('/berita', $berita->id)  }}" method="POST">
+    <form class="forms-sample" action="{{ url('/berita', $berita->id)  }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div class="card-body">

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Jadwal;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+
 
 class JadwalController extends Controller
 {
@@ -43,6 +45,10 @@ class JadwalController extends Controller
             'gambar' => 'required',
         ]);
 
+        $gambarPath = $request->file('gambar')->store('gambar', 'public');
+
+        $validated['gambar'] = $gambarPath;
+
         unset($validated['id']);
 
         Jadwal::create($validated);
@@ -54,7 +60,7 @@ class JadwalController extends Controller
      */
     public function show(Jadwal $jadwal)
     {
-        //
+        //                                                          
     }
 
     /**
@@ -80,7 +86,22 @@ class JadwalController extends Controller
             'alamat' => 'required',
             'tanggal' => 'required',
             'link' => 'required',
+            'gambar' => 'required',
         ]);
+
+
+        // Update gambar jika ada
+        if ($request->hasFile('gambar')) {
+            // Hapus gambar lama jika diperlukan
+            Storage::delete($jadwal->gambar);
+
+            // Simpan gambar baru
+            $jadwal->gambar = $request->file('gambar')->store('gambar', 'public');
+            $jadwal->save();
+        }
+
+
+
         $jadwal->update($validated);
         return redirect('/jadwal');
     }
@@ -90,6 +111,18 @@ class JadwalController extends Controller
      */
     public function destroy(string $id)
     {
+        $jadwal = Jadwal::find($id);
+
+        if (!$jadwal) {
+            return redirect('/jadwal')->with('error', 'jadwal tidak ditemukan');
+        }
+    
+        // Hapus gambar dari storage
+        Storage::delete($jadwal->gambar);
+    
+        // Hapus record dari database
+        $jadwal->delete();
+
         Jadwal::destroy($id);
         return redirect('/jadwal');
     }

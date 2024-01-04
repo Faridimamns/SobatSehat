@@ -62,36 +62,18 @@
                     </div>
                 </div>							
                 <div class="row">
-                    <div class="col-lg-4 col-md-6">
+                    @foreach ($kliniks as $klinik)
+                    <div class="col-lg-4 col-md-6 mb-5">
                         <div class="single-service">
-                            <img class="img-fluid" src="/assets/img/s1.jpg" alt="">
-                            <a href="#"><h4>Klinik BlBLbl</h4></a>
+                            <img class="img-fluid" src="{{asset('storage/' . $klinik->gambar) }}" style="width: 50rem; height: 15rem;">
+                            <a href="#"><h4>{{ $klinik->nama }}</h4></a>
                             <p>
-                                inappropriate behavior is oftenlaug hed off as “boys will be boys,” women face higher conduct women face higher conduct.
+                                {{ $klinik->alamat }}
                             </p>
-                            <h5>Diabetes</h5>
+                            <h5>{{ $klinik->penyakit }}</h5>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-service">
-                            <img class="img-fluid" src="/assets/img/s2.jpg" alt="">
-                            <a href="#"><h4>Klinik BlBLbl</h4></a>
-                            <p>
-                                inappropriate behavior is oftenlaug hed off as “boys will be boys,” women face higher conduct women face higher conduct.
-                            </p>
-                            <h5>Diabetes</h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="single-service">
-                            <img class="img-fluid" src="/assets/img/s3.jpg" alt="">
-                            <a href="#"><h4>Klinik BlBLbl</h4></a>
-                            <p>
-                                inappropriate behavior is oftenlaug hed off as “boys will be boys,” women face higher conduct women face higher conduct.
-                            </p>
-                            <h5>Diabetes</h5>
-                        </div>
-                    </div>																		
+                    </div>	
+                    @endforeach															
                 </div>
             </div>	
         </section>

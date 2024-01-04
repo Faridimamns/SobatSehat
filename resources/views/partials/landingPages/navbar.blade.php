@@ -115,8 +115,8 @@
                 <ul class="nav-menu">
                     <li><a href="{{ url('/') }}">Beranda</a></li>
                     {{-- <li><a href="opening-hour.html">Berita</a></li> --}}
-                    <li><a href="{{ url('/home/berita') }}">Berita</a></li>
-                    <li><a href="{{ url('/home/jadwal') }}">Jadwal</a></li>
+                    <li><a href="{{ url('/page/berita') }}">Berita</a></li>
+                    <li><a href="{{ url('/page/jadwal') }}">Jadwal</a></li>
                     {{-- <li><a href="pricing.html">Pricing</a></li>
                     <li><a href="elements.html">Elements</a></li>
                     <li><a href="contact.html">Contact</a></li> --}}

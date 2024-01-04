@@ -26,9 +26,9 @@
         </div>							
         <div class="row">
             @foreach ($beritas as $berita)
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6 mb-5">
                 <div class="single-service">
-                    <img class="img-fluid" src="/assets/img/s1.jpg" alt="">
+                    <img class="img-fluid" src="{{asset('storage/' . $berita->gambar) }}" style="width: 50rem; height: 15rem;">
                     <a href="#"><h4>{{ $berita->judul }}</h4></a>
                     <p>
                         {{ $berita->informasi }} 

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Berita;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+
 
 class BeritaController extends Controller
 {
@@ -42,6 +44,13 @@ class BeritaController extends Controller
             'gambar' => 'required',
         ]);
 
+        // $gambar = $request->file('gambar');
+        // $gambar->storeAS(path: 'public/gambarUpload', name: $gambar->hashName());
+
+        $gambarPath = $request->file('gambar')->store('gambar', 'public');
+
+        $validated['gambar'] = $gambarPath;
+
         unset($validated['id']);
 
         Berita::create($validated);
@@ -73,14 +82,25 @@ class BeritaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $berita = Berita::find($id);
+        $berita = Berita::findOrFail($id);
         $validated = $request->validate([
             'judul' => 'required',
             'informasi' => 'required',
             'link' => 'required',
-            'gambar' => 'required'
+            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
         $berita->update($validated);
+
+        // Update gambar jika ada
+        if ($request->hasFile('gambar')) {
+            // Hapus gambar lama jika diperlukan
+            Storage::delete($berita->gambar);
+
+            // Simpan gambar baru
+            $berita->gambar = $request->file('gambar')->store('gambar', 'public');
+            $berita->save();
+        }
+
         return redirect('/berita');
     }
 
@@ -88,8 +108,20 @@ class BeritaController extends Controller
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
+
     {
-        Berita::destroy($id);
-        return redirect('/berita');
+        $berita = Berita::find($id);
+    
+        if (!$berita) {
+            return redirect('/berita')->with('error', 'Berita tidak ditemukan');
+        }
+    
+        // Hapus gambar dari storage
+        Storage::delete($berita->gambar);
+    
+        // Hapus record dari database
+        $berita->delete();
+    
+        return redirect('/berita')->with('success', 'Berita berhasil dihapus');
     }
 }

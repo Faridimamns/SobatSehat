@@ -15,7 +15,7 @@
         <p>Penambahan Data Klinik Rekomendasi</p>
     </div>
     <div class="card-body">
-        <form class="forms-sample" action="{{ url('/klinik') }}" method="POST">
+        <form class="forms-sample" action="{{ url('/klinik') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="text">Nama Klinik</label>

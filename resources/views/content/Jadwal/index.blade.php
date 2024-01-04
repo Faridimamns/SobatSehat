@@ -27,25 +27,30 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @php $no = 1; @endphp
                         @foreach ($jadwals as $jadwal)
-                    <tr>
-                        <th scope="row">{{ $loop->iteration }}</th>
-                        <td>{{ $jadwal->lokasi }}</td>
-                        <td>{{ $jadwal->alamat }}</td>
-                        <td>{{ $jadwal->link }}</td>
-                        <td>{{ $jadwal->tanggal }}</td>
-                        <td>{{ $jadwal->gambar }}</td>
-                        
-                        <td>
-                            <a href="jadwal/edit/{{$jadwal->id}}" style="color: orange; font-size: 20px; font-weight: bold;"><i class="la la-edit la-lg"></i></a>
-                            <a href="/jadwal/delete/{{$jadwal->id}}" style="color: red; font-size: 20px; font-weight: bold;"><i class="la la-trash la-lg"></i></a>
-                        </td>
-                    @endforeach
-                    </tr>
+                            <tr>
+                                <th scope="row">{{ $loop->iteration }}</th>
+                                <td>{{ $jadwal->lokasi }}</td>
+                                <td>{{ $jadwal->alamat }}</td>
+                                <td>{{ $jadwal->link }}</td>
+                                <td>{{ $jadwal->tanggal }}</td>
+                                <td>{{ $jadwal->gambar }}</td>
+
+                                <td>
+                                    <a href="jadwal/edit/{{ $jadwal->id }}"
+                                        style="color: orange; font-size: 20px; font-weight: bold;"><i
+                                            class="la la-edit la-lg"></i></a>
+                                    <a href="/jadwal/delete/{{ $jadwal->id }}"
+                                        style="color: red; font-size: 20px; font-weight: bold;"><i
+                                            class="la la-trash la-lg"></i></a>
+                                </td>
+                                @php $no++; @endphp
+                        @endforeach
+                        </tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-   
 @endsection

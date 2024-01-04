@@ -24,21 +24,23 @@
             </div>
         </div>							
         <div class="row">
-            <div class="col-lg-4 col-md-6">
+            @foreach ($jadwals as $jadwal)
+            <div class="col-lg-4 col-md-6 mb-5">
                 <div class="single-service">
-                    <img class="img-fluid" src="/assets/img/s1.jpg" alt="">
-                    <a href="#"><h4>KLINIK PERMATA INDAH PERMAI</h4></a>
+                    <img class="img-fluid" src="{{asset('storage/' . $jadwal->gambar) }}" style="width: 50rem; height: 15rem;">
+                    <a href="#"><h4>{{ $jadwal->lokasi }}</h4></a>
                     <p>
-                        Komplek Perumahan Taman Permata Indah 2 Blok E No.8, Pejagalan, Kec. Penjaringan, Jkt Utara, 14450 
+                        {{ $jadwal->alamat }} 
                     </p>
                     <div style="display: flex; justify-content: start; align-items: center">
-                        <button type="button" class="btn btn-danger mr-2">DAFTAR</button>
+                        <a type="button" href="{{ $jadwal->link }}" class="btn btn-danger mr-2">DAFTAR</a>
                         <i class="fa fa-calendar fa-2x mr-2" aria-hidden="true"></i>
-                        <span style="color: black; font-weight: bold" >18-12-2023</span> 
+                        <span style="color: black; font-weight: bold" >{{ \Carbon\Carbon::parse($jadwal->tanggal)->format('d F Y') }}</span> 
                     </div>
                 </div>
+                @endforeach
             </div>
-            <div class="col-lg-4 col-md-6">
+            {{-- <div class="col-lg-4 col-md-6">
                 <div class="single-service">
                     <img class="img-fluid" src="/assets/img/s2.jpg" alt="">
                     <a href="#"><h4>UPTD PUSKESMAS DEPOK JAYA</h4></a>
@@ -65,7 +67,7 @@
                         <span style="color: black; font-weight: bold" >16-02-2024</span>
                     </div>
                 </div>
-            </div>																		
+            </div>																		 --}}
         </div>
     </div>	
 </section>
