@@ -31,7 +31,7 @@
                                 fill="black" />
                         </svg>
 
-                        <span>Hizrian</span></a>
+                        <span class="text-capitalize">{{ Auth::user()->name }}</span></a>
                     <ul class="dropdown-menu dropdown-user">
 
                         <a class="dropdown-item" href="{{ url('/') }}"><i class="ti-settings"></i> Back To Home</a>

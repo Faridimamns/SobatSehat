@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AkunController;
 use App\Http\Controllers\KlinikController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BeritaController;
@@ -47,6 +48,13 @@ Route::get('/klinik/edit/{id}', [KlinikController::class, 'edit']);
 Route::get('/klinik/delete/{id}', [KlinikController::class, 'destroy']);
 Route::post('/klinik', [KlinikController::class, 'store']);
 Route::put('/klinik/{id}',[KlinikController::class,'update' ]);
+
+Route::get('/akun', [AkunController::class, 'index']);
+Route::get('/akun/create', [AkunController::class, 'create']);
+Route::get('/akun/edit/{id}', [AkunController::class, 'edit']);
+Route::get('/akun/delete/{id}', [AkunController::class, 'destroy']);
+Route::post('/akun', [AkunController::class, 'store']);
+Route::put('/akun/{id}',[AkunController::class,'update' ]);
 
 Auth::routes();
 

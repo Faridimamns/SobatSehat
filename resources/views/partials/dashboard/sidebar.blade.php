@@ -12,11 +12,13 @@
             </div>
             <div class="info">
                 <a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
-                    <span>
-                        Hizrian
-                        <span class="user-level">Administrator</span>
+                    
+                    <span >
+                        <span class="text-dark text-uppercase">{{ Auth::user()->name }}</span>
+                        <span class="user-level text-capitalize">{{ Auth::user()->role }}</span>
                         <span class="caret"></span>
                     </span>
+                    
                 </a>
                 <div class="clearfix"></div>
 
@@ -61,6 +63,13 @@
                     <p>Jadwal</p>
                 </a>
             </li>
+            <li class="nav-item {{ Request::is('akun', 'akun/create', 'akun/edit') ? 'active' : '' }}">
+                <a href="{{ url('/akun') }}">
+                    <i class="la la-user"></i>
+                    <p>Akun</p>
+                </a>
+            </li>
+
 
 
         </ul>
