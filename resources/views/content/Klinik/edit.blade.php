@@ -5,6 +5,10 @@
         <div class="card-title">Edit Data Klinik</div>
         <p>Edit Data Klinik Rekomendasi</p>
     </div>
+    <form action="{{ url('/klinik', $klinik->id) }}" method="POST">
+        @csrf
+        @method('PUT')
+    </form>
     <div class="card-body">
         <div class="form-group">
             <label for="text">Nama Klinik</label>
