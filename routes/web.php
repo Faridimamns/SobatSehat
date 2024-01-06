@@ -28,13 +28,18 @@ Route::get('/', [LandingPageController::class, 'klinik']);
 Route::get('/page/berita', [LandingPageController::class, 'berita']);
 Route::get('/page/jadwal', [LandingPageController::class, 'jadwal']);
 
+
+
+Route::group(['middleware' => ['auth', 'peran:admin-kontributor']], function(){
 Route::get('/jadwal', [JadwalController::class, 'index']);
 Route::get('/jadwal/create', [JadwalController::class, 'create']);
 Route::get('/jadwal/edit/{id}', [JadwalController::class, 'edit']);
 Route::get('/jadwal/delete/{id}', [JadwalController::class, 'destroy']);
 Route::post('/jadwal', [JadwalController::class, 'store']);
 Route::put('/jadwal/{id}', [JadwalController::class, 'update']);
+});
 
+Route::group(['middleware' => ['auth', 'peran:admin']], function(){
 Route::get('/berita', [BeritaController::class, 'index']);
 Route::get('/berita/create', [BeritaController::class, 'create']);
 Route::get('/berita/edit/{id}', [BeritaController::class, 'edit']);
@@ -55,6 +60,8 @@ Route::get('/akun/edit/{id}', [AkunController::class, 'edit']);
 Route::get('/akun/delete/{id}', [AkunController::class, 'destroy']);
 Route::post('/akun', [AkunController::class, 'store']);
 Route::put('/akun/{id}',[AkunController::class,'update' ]);
+
+});
 
 Auth::routes();
 

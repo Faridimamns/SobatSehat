@@ -12,63 +12,72 @@
             </div>
             <div class="info">
                 <a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
-                    
-                    <span >
+
+                    <span>
                         <span class="text-dark text-uppercase">{{ Auth::user()->name }}</span>
                         <span class="user-level text-capitalize">{{ Auth::user()->role }}</span>
                         <span class="caret"></span>
                     </span>
-                    
+
                 </a>
                 <div class="clearfix"></div>
 
                 <div class="collapse in" id="collapseExample" aria-expanded="true" style="">
                     <ul class="nav">
+                        @if (Auth::user()->role == 'admin')
                         <li>
-                            <a href="{{ url('/')}}">
+                            <a class="dropdown-item" href="{{ url('/') }}">
                                 <span class="link-collapse">Back To Home</span>
                             </a>
                         </li>
+                        @endif
                         <li>
                             <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
+                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+                                {{ __('Logout') }}
+                            </a>
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
+
         <ul class="nav">
-            <li class="nav-item {{ Request::is('klinik', 'klinik/create', 'klinik/edit') ? 'active' : '' }}">
-                <a href="{{ url('/klinik') }}">
-                    <i class="la la-hospital-o"></i>
-                    <p>Klinik</p>
-                </a>
-            </li>
-            <li class="nav-item {{ Request::is('berita', 'berita/create', 'berita/edit') ? 'active' : '' }}">
-                <a href="{{ url('/berita') }}">
-                    <i class="la la-newspaper-o"></i>
-                    <p>Berita</p>
-                </a>
-            </li>
+            @if (Auth::user()->role == 'admin')
+                <li class="nav-item {{ Request::is('klinik', 'klinik/create', 'klinik/edit') ? 'active' : '' }}">
+                    <a href="{{ url('/klinik') }}">
+                        <i class="la la-hospital-o"></i>
+                        <p>Klinik</p>
+                    </a>
+                </li>
+                <li class="nav-item {{ Request::is('berita', 'berita/create', 'berita/edit/') ? 'active' : '' }}">
+                    <a href="{{ url('/berita') }}">
+                        <i class="la la-newspaper-o"></i>
+                        <p>Berita</p>
+                    </a>
+                </li>
+            @endif
+
             <li class="nav-item {{ Request::is('jadwal', 'jadwal/create', 'jadwal/edit') ? 'active' : '' }}">
                 <a href="{{ url('/jadwal') }}">
                     <i class="la la-calendar-o"></i>
                     <p>Jadwal</p>
                 </a>
             </li>
-            <li class="nav-item {{ Request::is('akun', 'akun/create', 'akun/edit') ? 'active' : '' }}">
-                <a href="{{ url('/akun') }}">
-                    <i class="la la-user"></i>
-                    <p>Akun</p>
-                </a>
-            </li>
+
+            @if (Auth::user()->role == 'admin')
+                <li class="nav-item {{ Request::is('akun', 'akun/create', 'akun/edit') ? 'active' : '' }}">
+                    <a href="{{ url('/akun') }}">
+                        <i class="la la-user"></i>
+                        <p>Akun</p>
+                    </a>
+                </li>
+            @endif
 
 
 

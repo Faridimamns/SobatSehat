@@ -12,15 +12,27 @@
             <div class="card-body">
                 <div class="form-group">
                     <label for="text">Nama</label>
-                    <input type="text" class="form-control" name="name" value="{{ $akun->name}}" id="text" placeholder="">
+                    <input type="text" class="form-control" name="name" value="{{ $akun->name }}" id="text"
+                        placeholder="">
                 </div>
                 <div class="form-group">
                     <label for="text-area">Email</label>
-                    <input type="text-area" class="form-control" name="email" value="{{ $akun->email}}" id="text-area" placeholder="">
+                    <input type="text-area" class="form-control" name="email" value="{{ $akun->email }}" id="text-area"
+                        placeholder="">
                 </div>
-                <div class="form-group">
+                {{-- <div class="form-group">
                     <label for="text-area">Role</label>
-                    <input type="text-area" class="form-control" name="role" value="{{ $akun->role}}"  id="text-area" placeholder="">
+                    <input type="text-area" class="form-control" name="role" value="{{ $akun->role }}" id="text-area"
+                        placeholder="">
+                </div> --}}
+                <div class="form-group">
+                    <label for="pilihOpsi" class="text-capitalize">Role</label>
+                    <select class="form-control" id="role" name="role">
+                        <option value="{{ $akun->role }}">{{ $akun->role }}</option>
+                        <option value="admin">Admin</option>
+                        <option value="kontributor">Kontributor</option>
+                        <option value="tidak terdaftar">Tidak Terdaftar</option>
+                    </select>
                 </div>
                 {{-- <div class="form-group">
                     <label for="text">File Gambar</label>

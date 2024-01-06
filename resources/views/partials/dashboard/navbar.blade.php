@@ -33,9 +33,11 @@
 
                         <span class="text-capitalize">{{ Auth::user()->name }}</span></a>
                     <ul class="dropdown-menu dropdown-user">
-
+                        
+                        @if (Auth::user()->role == 'admin')
                         <a class="dropdown-item" href="{{ url('/') }}"><i class="ti-settings"></i> Back To Home</a>
                         <div class="dropdown-divider"></div>
+                        @endif
 
                         <a class="dropdown-item" href="{{ route('logout') }}"
                             onclick="event.preventDefault();

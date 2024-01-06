@@ -53,9 +53,11 @@
 
                                 <div class="dropdown">
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-
-                                        <a class="dropdown-item text-dark" href="{{ url('klinik/') }}">Go To Dashboard</a>
-                                        <div class="dropdown-divider"></div>
+                                        @if (Auth::user()->role == 'admin')
+                                            <a class="dropdown-item text-dark" href="{{ url('klinik/') }}">Go To
+                                                Dashboard</a>
+                                            <div class="dropdown-divider"></div>
+                                        @endif
 
                                         <a class="dropdown-item text-dark" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
