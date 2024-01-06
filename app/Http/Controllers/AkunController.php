@@ -90,6 +90,7 @@ class AkunController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        User::destroy($id);
+        return redirect('/akun');
     }
 }

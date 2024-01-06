@@ -6,7 +6,7 @@
             <p>Data Akun & Validasi Akun Kontributor</p>
         </div>
         <div class="card-body">
-            <a href="{{ url('klinik/create') }}" type="button" class="btn mb-3 btn-warning">Tambah</a>
+            {{-- <a href="{{ url('akun/create') }}" type="button" class="btn mb-3 btn-warning">Tambah</a> --}}
             <div class="table-responsive">
                 <table class="table table-bordered">
                     <thead>
