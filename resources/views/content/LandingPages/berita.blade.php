@@ -37,26 +37,7 @@
                 </div>
             </div>
             @endforeach
-            {{-- <div class="col-lg-4 col-md-6">
-                <div class="single-service">
-                    <img class="img-fluid" src="/assets/img/s2.jpg" alt="">
-                    <a href="#"><h4>Olahraga yang cukup untuk lansia</h4></a>
-                    <p>
-                        Berbagai Jenis Olahraga untuk Lansia Beserta Manfaatnya. 
-                    </p>
-                    <button type="button" class="btn btn-info">Selengkapnya</button>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single-service">
-                    <img class="img-fluid" src="/assets/img/s3.jpg" alt="">
-                    <a href="#"><h4>Periksa kesehatan rutin</h4></a>
-                    <p>
-                        Ini dia 8 Tes Kesehatan yang Rutin Dilakukan Lansia. 
-                    </p>
-                    <button type="button" class="btn btn-info">Selengkapnya</button>
-                </div>
-            </div>																		 --}}
+																	
         </div>
     </div>	
 </section>

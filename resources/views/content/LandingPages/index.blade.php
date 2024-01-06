@@ -1,28 +1,27 @@
 @extends('partials.landingPages.main')
 @section('content')
-    
-        <!-- start banner Area -->
-        <section class="banner-area relative" id="home">
-            <div class="overlay overlay-bg"></div>
-            <div class="container">
-                <div class="row fullscreen d-flex justify-content-center align-items-center">
-                    
-                    <div class="banner-content col-lg-9 col-md-12 justify-content-center">
-                        <h4 class="text-uppercase" style="color: white" >SOBAT SEHAT</h4>
-                        <div class="mt-5">
-                            <h1>
-                                Nikmati Hari Tua Dengan Hidup Yang Berkualitas		
-                            </h1>
-                        </div>
-                        
-                    </div>											
+    <!-- start banner Area -->
+    <section class="banner-area relative" id="home">
+        <div class="overlay overlay-bg"></div>
+        <div class="container">
+            <div class="row fullscreen d-flex justify-content-center align-items-center">
+
+                <div class="banner-content col-lg-9 col-md-12 justify-content-center">
+                    <h4 class="text-uppercase" style="color: white">SOBAT SEHAT</h4>
+                    <div class="mt-5">
+                        <h1>
+                            Nikmati Hari Tua Dengan Hidup Yang Berkualitas
+                        </h1>
+                    </div>
+
                 </div>
             </div>
-        </section>
-        <!-- End banner Area -->
+        </div>
+    </section>
+    <!-- End banner Area -->
 
-        <!-- Start open-hour Area -->
-        {{-- <section class="open-hour-area">
+    <!-- Start open-hour Area -->
+    {{-- <section class="open-hour-area">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-12 open-hour-wrap">
@@ -47,39 +46,42 @@
                 </div>
             </div>	
         </section> --}}
-        <!-- End open-hour Area -->
-        
-        
-        <!-- Start service Area -->
-        <section class="service-area section-gap">
-            <div class="container">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-md-12 pb-40 header-text text-center">
-                        <h1 class="pb-10">Rekomendasi Klinik</h1>
-                        <p>
-                            Klinik Rekomendasi & Terpercaya Sesuai Kebutuhan Anda
-                        </p>
-                    </div>
-                </div>							
-                <div class="row">
-                    @foreach ($kliniks as $klinik)
+    <!-- End open-hour Area -->
+
+
+    <!-- Start service Area -->
+    <section class="service-area section-gap">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-12 pb-40 header-text text-center">
+                    <h1 class="pb-10">Rekomendasi Klinik</h1>
+                    <p>
+                        Klinik Rekomendasi & Terpercaya Sesuai Kebutuhan Anda
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                @foreach ($kliniks as $klinik)
                     <div class="col-lg-4 col-md-6 mb-5">
                         <div class="single-service">
-                            <img class="img-fluid" src="{{asset('storage/' . $klinik->gambar) }}" style="width: 50rem; height: 15rem;">
-                            <a href="#"><h4>{{ $klinik->nama }}</h4></a>
+                            <img class="img-fluid" src="{{ asset('storage/' . $klinik->gambar) }}"
+                                style="width: 50rem; height: 15rem;">
+                            <a href="#">
+                                <h4>{{ $klinik->nama }}</h4>
+                            </a>
                             <p>
                                 {{ $klinik->alamat }}
                             </p>
                             <h5>{{ $klinik->penyakit }}</h5>
                         </div>
-                    </div>	
-                    @endforeach															
-                </div>
-            </div>	
-        </section>
-        <!-- End service Area -->
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+    <!-- End service Area -->
 
-        {{-- <!-- Start home-about Area -->
+    {{-- <!-- Start home-about Area -->
         <section class="home-about-area section-gap relative">			
             <div class="container">
                 <div class="row align-items-center justify-content-end">
@@ -117,7 +119,7 @@
         </section>
         <!-- End home-about Area --> --}}
 
-        {{-- <!-- Start testomial Area -->
+    {{-- <!-- Start testomial Area -->
         <section class="testomial-area section-gap">
             <div class="container">
                 <div class="row d-flex justify-content-center">
@@ -226,8 +228,8 @@
         </section>
         <!-- End testomial Area -->		 --}}
 
-        <!-- Start team Area -->
-        {{-- <section class="team-area section-gap" id="team">
+    <!-- Start team Area -->
+    {{-- <section class="team-area section-gap" id="team">
             <div class="container">
                 <div class="row d-flex justify-content-center">
                     <div class="menu-content pb-70 col-lg-8">
@@ -287,7 +289,7 @@
         </section>
         <!-- End team Area -->		 --}}
 
-        {{-- <!-- Start feature Area -->
+    {{-- <!-- Start feature Area -->
         <section class="feature-area section-gap">
             <div class="container">
                 <div class="row d-flex justify-content-center">
