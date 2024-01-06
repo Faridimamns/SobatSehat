@@ -25,7 +25,9 @@ class AkunController extends Controller
      */
     public function create()
     {
-        //
+        return view('content.Akun.create', [
+            "title" => "Tambah Akun"
+        ]);
     }
 
     /**
@@ -33,7 +35,16 @@ class AkunController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required',
+            'role' => 'required',
+            'email' => 'required',
+        ]);
+
+        unset($validated['id']);
+
+        User::create($validated);
+        return redirect('/akun');
     }
 
     /**
@@ -49,7 +60,11 @@ class AkunController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $akun = User::find($id);
+        return view('content.Akun.edit', [
+            "title" => "Edit Akun",
+            'akun' => $akun
+        ]);
     }
 
     /**
@@ -57,7 +72,17 @@ class AkunController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $akun = User::find($id);
+        $validated = $request->validate([
+            'name' => 'required',
+            'role' => 'required',
+            'email' => 'required',
+
+        ]);
+        $akun->update($validated);
+        $akun->save();
+
+        return redirect('/akun');
     }
 
     /**

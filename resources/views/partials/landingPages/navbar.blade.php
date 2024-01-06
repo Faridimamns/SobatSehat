@@ -33,28 +33,30 @@
                         @endif
                     </div>
                 @else
-                <div class="ml-auto"></div>
+                    <div class="ml-auto"></div>
                     <div class="ml-auto">
                         <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"
+                                <a class="nav-link dropdown-toggle text-secondary" data-toggle="dropdown" href="#"
                                     aria-expanded="false">
                                     {{-- <img src="/assetsDashboard/img/profile.jpg" alt="user-img" width="36" class="img-circle"> --}}
-                                    <svg width="20" height="20" viewBox="0 0 50 58" fill="none"
+                                    {{-- <svg width="20" height="20" viewBox="0 0 50 58" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M25 28.5714C32.8906 28.5714 39.2857 22.1763 39.2857 14.2857C39.2857 6.39509 32.8906 0 25 0C17.1094 0 10.7143 6.39509 10.7143 14.2857C10.7143 22.1763 17.1094 28.5714 25 28.5714ZM35 32.1429H33.1362C30.6585 33.2812 27.9018 33.9286 25 33.9286C22.0982 33.9286 19.3527 33.2812 16.8638 32.1429H15C6.71875 32.1429 0 38.8616 0 47.1429V51.7857C0 54.7433 2.39955 57.1429 5.35714 57.1429H44.6429C47.6004 57.1429 50 54.7433 50 51.7857V47.1429C50 38.8616 43.2812 32.1429 35 32.1429Z"
                                             fill="black" />
-                                    </svg>
-                                    <span class="text-black font-weight-bold "
-                                        style="font-size: 1rem; margin-left: 1rem;">{{ Auth::user()->name }}</span>
+
+                                    </svg> --}}
+                                    <span class="text-secondary text-capitalize font-weight-bold "
+                                        style="font-size: 1rem; margin-left: 5px;">{{ Auth::user()->name }}</span>
                                 </a>
+
                                 <div class="dropdown">
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        
+
                                         <a class="dropdown-item text-dark" href="{{ url('klinik/') }}">Go To Dashboard</a>
                                         <div class="dropdown-divider"></div>
-                                        
+
                                         <a class="dropdown-item text-dark" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
