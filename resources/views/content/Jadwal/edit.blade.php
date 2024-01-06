@@ -27,7 +27,7 @@
             </div>
             <div class="form-group">
                 <label for="text">File Gambar</label>
-                <input type="file" class="form-control" name="gambar" value="{{$jadwal->gambar}}" id="gambar" accept=".png, .jpg, .jpeg">
+                <input type="file" class="form-control" id="gambar" name="gambar" value="{{$jadwal->gambar}}" accept=".png, .jpg, .jpeg">
             </div>
             <div class="mt-2 mb-2 p-2">
                 <a href="/jadwal" type="button" class="btn btn-danger">Cancel</a>
@@ -35,11 +35,6 @@
             </div>
         </form>
 
-        {{-- <form action="/proses-form" method="post">
-        <label for="tanggal">Tanggal:</label>
-        <input type="date" id="tanggal" name="tanggal" required>
-
-    </form> --}}
 
     </div>
 </div>

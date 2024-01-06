@@ -86,11 +86,10 @@ class JadwalController extends Controller
             'alamat' => 'required',
             'tanggal' => 'required',
             'link' => 'required',
-            'gambar' => 'required',
+            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
+        $jadwal->update($validated);
 
-
-        // Update gambar jika ada
         if ($request->hasFile('gambar')) {
             // Hapus gambar lama jika diperlukan
             Storage::delete($jadwal->gambar);
@@ -100,9 +99,7 @@ class JadwalController extends Controller
             $jadwal->save();
         }
 
-
-
-        $jadwal->update($validated);
+        
         return redirect('/jadwal');
     }
 

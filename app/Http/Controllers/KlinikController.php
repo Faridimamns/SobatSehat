@@ -46,7 +46,7 @@ class KlinikController extends Controller
             'nama' => 'required',
             'alamat' => 'required',
             'penyakit' => 'required',
-            'gambar' => 'required',
+            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
     
 
@@ -98,6 +98,7 @@ class KlinikController extends Controller
             'penyakit' => 'required',
             'gambar' => 'required'
         ]);
+        $klinik->update($validated);
 
         // Update gambar jika ada
         if ($request->hasFile('gambar')) {
@@ -109,7 +110,7 @@ class KlinikController extends Controller
             $klinik->save();
         }
 
-        $klinik->update($validated);
+        
         return redirect('/klinik');
 
     }
